@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cuhp64qjd-nodejs-gitops
+  description: This is GitOps manifest for cuhp64qjd-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=cuhp64qjd-nodejs
+    backstage.io/kubernetes-id: cuhp64qjd-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cuhp64qjd-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cuhp64qjd-nodejs
